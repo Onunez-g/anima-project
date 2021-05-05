@@ -1,0 +1,30 @@
+.navbar {
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+  margin-left: 16.4em;
+  .link {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    color: white;
+    margin: 0 17px 0 18px;
+    text-decoration: none;
+  }
+  .link ::hover {
+    color: #ff6243;
+  }
+  .active {
+    position: relative;
+    color: #ff6243;
+    // overflow: hidden;
+  }
+  .active::after {
+    position: absolute;
+    content: "";
+    height: 1px;
+    background-color: #ff6243;
+    width: 100%;
+    left: 0;
+    top: 2.15em;
+  }
+}

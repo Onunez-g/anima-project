@@ -1,14 +1,18 @@
-import './App.css';
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import "./App.css";
+import Home from "./Pages/Home/Home";
 
 function App() {
   return (
     <div className="App">
-      <div className="navbar" >
-        <h2>Home</h2>
-        <h2>Anime</h2>
-        <h2>Episodes</h2>
-        <h2>Categories</h2>
-      </div>
+      <BrowserRouter>
+        <Switch>
+          <Route path="/" component={Home} />
+          <Route path="/anime" component={Home} />
+          <Route path="/episodes" component={Home} />
+          <Route path="/categories" component={Home} />
+        </Switch>
+      </BrowserRouter>
     </div>
   );
 }

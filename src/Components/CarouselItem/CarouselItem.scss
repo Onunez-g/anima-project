@@ -1,0 +1,29 @@
+.item {
+  border-radius: 20px;
+  margin: 3.125em 7.5em;
+  img {
+    border-radius: 20px;
+  }
+  .showMore {
+    position: absolute;
+    right: 12em;
+    bottom: 2.75em;
+    background-color: #FF6243;
+    color: white;
+    padding: 10px 45px;
+    border-radius: 15px;
+    border: none;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 1.5em;
+  }
+  div {
+    background-color: #37323293;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    position: absolute;
+    padding: 5px 20px;
+    bottom: 2em;
+    left: 10em;
+  }
+}
