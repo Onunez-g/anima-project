@@ -1,4 +1,42 @@
 .home {
   display: flex;
   flex-direction: column;
+  height: 100%;
+  .recently {
+    color: white;
+    font-family: "Roboto" sans-serif;
+    margin: 1em 5.25em;
+  }
+  .list {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    margin: 1.5em 5.5em 0 5.5em;
+    .item {
+      margin: 0 1.15em;
+    }
+    .viewMore {
+      width: 154px;
+      height: 218px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border-radius: 20px;
+      margin: 0 1.15em;
+      background: linear-gradient(
+        90deg,
+        rgba(155, 74, 59, 1) 0%,
+        rgba(255, 98, 67, 1) 100%
+      );
+      h2 {
+        font-family: "Roboto" sans-serif;
+        color: white;
+      }
+      transition: 1s;
+    }
+    .viewMore:hover {
+      transform: scale(1.1);
+    }
+  }
 }
