@@ -37,7 +37,7 @@ const Carousel = ({ slides }) => {
     return slides.map((x, i) => {
       return (
         <div className={i === current ? "slide active" : "slide"} key={i}>
-          {i === current && <CarouselItem attributes={x.attributes} isCover />}
+          {i === current && <CarouselItem attributes={x.attributes} id={x.id} isCover />}
         </div>
       );
     });

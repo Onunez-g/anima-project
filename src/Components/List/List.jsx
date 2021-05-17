@@ -5,7 +5,7 @@ const List = ({ data }) => {
   const renderData = () => {
     return data
       ?.slice(0, 8)
-      .map((x) => <CarouselItem key={x.id} attributes={x.attributes} />);
+      .map((x) => <CarouselItem key={x.id} id={x.id} attributes={x.attributes} />);
   };
   return (
     <>

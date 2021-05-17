@@ -1,0 +1,99 @@
+.details-container {
+  display: grid;
+  grid-template-columns: 284px repeat(4, auto);
+  grid-auto-rows: minmax(90px, auto);
+  margin: 4.5em 15em 4.5em 5em;
+  font-family: 'Poppins', sans-serif;
+  color: #f3f3f3;
+  .animeImage {
+    grid-column: 1;
+    grid-row: span 2;
+    border-radius: 20px;
+  }
+  .title {
+    grid-column: 2;
+    grid-row: 1;
+    border-radius: 0 0 20px 0;
+    font-weight: 600;
+    font-size: 1.5em;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(
+      45deg,
+      rgba(105, 62, 55, 1) 0%,
+      rgba(255, 98, 67, 1) 150%
+    );
+    height: max-content;
+    padding: 10px 50px 10px 20px;
+    justify-self: start;
+    margin: 2em 0 0 0;
+  }
+  .description {
+    display: flex;
+    flex-flow: column;
+    grid-column: 2 / span 4;
+    grid-row: 2;
+    margin: 1em 1em;
+    align-self: flex-start;
+    .titles {
+      color: #FF9443;
+      display: flex;
+      flex-flow: row wrap;
+      margin: .8em 0;
+      p {
+        margin: 0 1.25em 0 0;
+      }
+    }
+  }
+  .score {
+    grid-column: -1;
+    padding: 20px;
+    border-radius: 20px;
+    font-size: 1.5em;
+    font-weight: 700;
+    background: linear-gradient(
+      45deg,
+      rgba(62, 198, 62, 1) 0%,
+      rgba(185, 241, 185, 1)  200%
+    );
+    height: max-content;
+  }
+  .addLibrary {
+    grid-row: 3;
+    height: max-content;
+    border: none;
+    border-radius: 15px;
+    padding: 10px 30px;
+    background-color: #FF6243;
+    color: inherit;
+    font-family: 'Roboto' sans-serif;
+    font-weight: 500;
+    font-size: 1.5em;
+    margin: .8em 0;
+  }
+  .extraDetails {
+    display: flex;
+    flex-flow: column;
+    height: max-content;
+    grid-column: 1;
+    border-radius: 20px;
+    background-color: #9B4A3B;
+    font-weight: 600;
+    font-size: 1.2em;
+    padding: .4em 1em;
+    p {
+      margin: .5em 0;
+    }
+  }
+  .rankings {
+    justify-content: end;
+    justify-items: end;
+    grid-row: 4;
+    p {
+      text-align: end;
+    }
+  }
+  .info {
+    grid-row: 5;
+    margin-top: 1em;
+  }
+}

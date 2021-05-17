@@ -15,6 +15,12 @@ export function useGetRecentlyUpdated() {
   ).then((res) => res.json()) );
 }
 
+export function useGetAnimeById(id) {
+  return useQuery(`getAnimeId-${id}`, () =>
+    fetch(`${API_ANIME}/${id}`).then((res) => res.json())
+  )
+}
+
 export default function useGetAnime(filter, sort = [], id = 0) {
   return useQuery(`getAnime-${id}`, () =>
     fetch(`${API_ANIME}${convertObjectToFilterandSort(filter, sort)}`).then((res) => res.json())
