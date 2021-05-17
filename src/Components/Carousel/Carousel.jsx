@@ -1,6 +1,7 @@
 import { React, useState, useRef, useEffect } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import CarouselItem from "../../Components/CarouselItem/CarouselItem";
+import Skeleton from 'react-loading-skeleton';
 import "./Carousel.scss";
 
 const Carousel = ({ slides }) => {
@@ -45,7 +46,7 @@ const Carousel = ({ slides }) => {
     <section className="slider">
       <FaChevronLeft className="backArrow" onClick={prevSlide} />
       <FaChevronRight className="fowardArrow" onClick={nextSlide} />
-      {renderItems()}
+      {renderItems() || <Skeleton height={400}/>}
     </section>
   );
 };

@@ -6,7 +6,7 @@ const Navbar = () => {
   return (
     <>
       <div className="navbar">
-        <NavLink activeClassName="active" className="link" to="/">Home</NavLink>
+        <NavLink activeClassName="active" className="link" exact to="/">Home</NavLink>
         <NavLink activeClassName="active" className="link" to="/anime">Anime</NavLink>
         <NavLink activeClassName="active" className="link" to="/episodes">Episodes</NavLink>
         <NavLink activeClassName="active" className="link" to="/categories">Categories</NavLink>

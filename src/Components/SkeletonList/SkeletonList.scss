@@ -1,0 +1,10 @@
+.skeletonList {
+  display: flex;
+  flex-flow: row;
+  position: relative;
+  margin: 1.5em 5.5em 0 5.5em;
+  .skeleton {
+    margin: 0 1.15em;
+    border-radius: 20px;
+  }
+}

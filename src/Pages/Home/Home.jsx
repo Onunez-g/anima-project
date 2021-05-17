@@ -5,34 +5,30 @@ import "./Home.scss";
 import { useQuery } from "react-query";
 import CarouselItem from "../../Components/CarouselItem/CarouselItem";
 import Carousel from "../../Components/Carousel/Carousel";
-
-const path = "https://kitsu.io/api/edge";
+import BasePage from "../BasePage";
+import {
+  useGetRecentlyUpdated,
+  useGetTrendingAnime,
+} from "../../hooks/Query/useGetAnime";
+import List from "../../Components/List/List";
+import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
+import SkeletonList from "../../Components/SkeletonList/SkeletonList";
 
 const Home = () => {
-  const { isLoading, data } = useQuery("trendingData", () =>
-    fetch(`${path}/trending/anime`).then((res) => res.json())
-  );
-  const { data: updated } = useQuery("recentlyUpdated", () =>
-    fetch(
-      "https://kitsu.io/api/edge/anime?sort=-updatedAt&filter[status]=current&filter[subtype]=TV"
-    ).then((res) => res.json())
-  );
+  const { isLoading, data } = useGetTrendingAnime();
+  const { data: updated, isLoading: updatedLoading } = useGetRecentlyUpdated();
   return (
-    <>
-      <div className="home">
-        <Navbar />
+    <BasePage>
+      {isLoading ? (
+        <SkeletonTheme color="#693E37" highlightColor="#CD563F">
+          <Skeleton className="skeletonCarousel" height={400} width={1680} />
+        </SkeletonTheme>
+      ) : (
         <Carousel slides={data?.data} />
-        <h2 className="recently">Recently updated</h2>
-        <div className="list">
-          {updated?.data.slice(0, 8).map((x) => (
-            <CarouselItem attributes={x.attributes} />
-          ))}
-          <div className="viewMore">
-            <h2>View More</h2>
-          </div>
-        </div>
-      </div>
-    </>
+      )}
+      <h2 className="recently">Recently updated</h2>
+      {updatedLoading ? <SkeletonList /> : <List data={updated?.data} />}
+    </BasePage>
   );
 };
 

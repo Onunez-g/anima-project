@@ -1,5 +1,6 @@
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import "./App.css";
+import Anime from "./Pages/Anime/AnimePage";
 import Home from "./Pages/Home/Home";
 
 function App() {
@@ -7,8 +8,8 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Switch>
-          <Route path="/" component={Home} />
-          <Route path="/anime" component={Home} />
+          <Route exact path="/" component={Home} />
+          <Route path="/anime" component={Anime} />
           <Route path="/episodes" component={Home} />
           <Route path="/categories" component={Home} />
         </Switch>
