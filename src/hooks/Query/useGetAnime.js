@@ -32,7 +32,6 @@ export function convertObjectToFilterandSort(filter, sort = []) {
   let hasSort = false
 
   if (sort.length !== 0) {
-    console.log(sort.join(','))
     queryParameters += `?sort=${sort.join(',')}`
     hasSort = true
   } 
@@ -45,6 +44,5 @@ export function convertObjectToFilterandSort(filter, sort = []) {
 
       queryParameters += `filter[${key}]=${filter[key]}`
   })
-  console.log(queryParameters)
   return queryParameters
 }

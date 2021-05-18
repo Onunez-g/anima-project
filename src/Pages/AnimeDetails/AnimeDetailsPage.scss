@@ -2,7 +2,7 @@
   display: grid;
   grid-template-columns: 284px repeat(4, auto);
   grid-auto-rows: minmax(90px, auto);
-  margin: 4.5em 15em 4.5em 5em;
+  margin: 4.5em 12em 4.5em 5em;
   font-family: 'Poppins', sans-serif;
   color: #f3f3f3;
   .animeImage {
@@ -26,6 +26,12 @@
     padding: 10px 50px 10px 20px;
     justify-self: start;
     margin: 2em 0 0 0;
+  }
+  .episodeTitle {
+    grid-row: 3;
+    color: #f3f3f3;
+    margin-left: 1em;
+    font-family: 'Poppins', sans-serif;
   }
   .description {
     display: flex;
@@ -70,30 +76,41 @@
     font-size: 1.5em;
     margin: .8em 0;
   }
-  .extraDetails {
+  .extra {
     display: flex;
     flex-flow: column;
-    height: max-content;
     grid-column: 1;
-    border-radius: 20px;
-    background-color: #9B4A3B;
-    font-weight: 600;
-    font-size: 1.2em;
-    padding: .4em 1em;
-    p {
-      margin: .5em 0;
+    grid-row: 4 / 5;
+    .extraDetails {
+      display: flex;
+      flex-flow: column;
+      height: max-content;
+      grid-column: 1;
+      border-radius: 20px;
+      background-color: #9B4A3B;
+      font-weight: 600;
+      font-size: 1.2em;
+      padding: .4em 1em;
+      p {
+        margin: .5em 0;
+      }
+    }
+    .rankings {
+      justify-content: end;
+      justify-items: end;
+      grid-row: 4;
+      p {
+        text-align: end;
+      }
+    }
+    .info {
+      grid-row: 5;
+      margin-top: 2em;
     }
   }
-  .rankings {
-    justify-content: end;
-    justify-items: end;
-    grid-row: 4;
-    p {
-      text-align: end;
-    }
-  }
-  .info {
-    grid-row: 5;
-    margin-top: 1em;
+  .episodes {
+    grid-column: 2 / span 4;
+    grid-row: 4 / span 1;
+    margin: 1em 0 0 5em;
   }
 }
